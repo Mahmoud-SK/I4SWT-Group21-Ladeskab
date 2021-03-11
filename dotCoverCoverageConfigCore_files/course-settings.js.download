@@ -1,0 +1,52 @@
+if( !window.CourseSettings )
+{
+  var CourseSettings =
+  {};
+
+  CourseSettings.toggleCourseAvailability = function( b2Name, courseId )
+  {
+     var toggleState = widget.LockUnlockToggle.getToggleState( 'courseAvailabilityToggle' );
+
+     var toggleStateData = {
+        courseAvailability: toggleState
+     };
+
+     var actionUrl = "/webapps/" + b2Name + "/course/courseProperties/setCourseAvailability?course_id=" + courseId + "&courseAvailability=" + toggleState;
+
+     var deferred = new $j.Deferred();
+     
+     var myAjax = $j.ajax({
+       url: actionUrl,
+       type: "POST",
+       data: toggleStateData,
+       dataType: "json",
+       beforeSend: function( x ) {
+         if (x && x.overrideMimeType) {
+           x.overrideMimeType("application/json;charset=utf-8");
+         }
+       },
+       success: function( data ) {
+       if( data.hasError && data.errorMessage )
+       {
+         deferred.reject( data.errorMessage );
+       }
+       else
+       {
+         deferred.resolve();
+       } 
+       },
+       error: function( xhr, textStatus, errorThrown) {
+         deferred.reject( textStatus );
+       }
+     });
+     
+     return deferred.promise();
+  };
+
+  CourseSettings.clickCourseAvailabilityToggle = function( b2Name, courseId )
+  {
+      CourseSettings.toggleCourseAvailability( b2Name, courseId )
+      .done( function() { location.reload(); } )
+      .fail( function( textStatus ) { alert( textStatus ); location.reload(); } );
+  };
+}
