@@ -6,9 +6,9 @@ namespace Ladeskab.Interfaces
 {
     public interface IChargeControl
     {
-        public bool isConnected();
-        public void startCharge();
-        public void stopCharge();
+        public bool IsConnected();
+        public void StartCharge();
+        public void StopCharge();
 
     }
 }
