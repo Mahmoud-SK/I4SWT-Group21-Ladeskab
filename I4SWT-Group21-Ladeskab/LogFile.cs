@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
-
-namespace I4SWT_Group21_Ladeskab
+using Ladeskab.Interfaces;
+namespace Ladeskab
 {
 	public class LogFile : ILogFile
 	{
@@ -18,12 +18,14 @@ namespace I4SWT_Group21_Ladeskab
 		{
 			sb_.Append("Date: " + DateTime.Now + " - Door has been locked with ID: " + id);
 			File.AppendAllText(Environment.CurrentDirectory + filename, sb_.ToString());
+			sb_.Clear();
 		}
 
 		public void LogDoorUnlocked(int id)
 		{
 			sb_.Append("Date: " + DateTime.Now + " - Door has been unlocked with ID: " + id);
 			File.AppendAllText(Environment.CurrentDirectory + filename, sb_.ToString());
+			sb_.Clear();
 		}
 	}
 }
