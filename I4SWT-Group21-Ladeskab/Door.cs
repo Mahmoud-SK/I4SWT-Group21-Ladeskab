@@ -1,22 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Ladeskab.Interfaces;
 
-namespace I4SWT_Group21_Ladeskab
+namespace Ladeskab
 {
-	public class Door : IDoor
-	{
+    public class Door : IDoor
+    {
+        private bool DoorState;
+        public bool CurrentDoorState { get; }
 
+        public event EventHandler<DoorStateEventArgs> DoorStateEvent;
 
-       public void lockDoor()
+        public void LockDoor()
         {
-
+            DoorState = true;
         }
 
-
-       public void unlockDoor()
+        public void UnlockDoor()
         {
-
+            DoorState = false;
         }
     }
 }
