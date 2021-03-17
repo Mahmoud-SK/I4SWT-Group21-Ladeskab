@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Ladeskab.Interfaces;
 
-namespace I4SWT_Group21_Ladeskab
+namespace Ladeskab
 {
     public class Display : IDisplay
     {

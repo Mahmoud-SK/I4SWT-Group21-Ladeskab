@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace I4SWT_Group21_Ladeskab
+namespace Ladeskab.Interfaces
 {
 	public interface IDisplay
     {
