@@ -4,19 +4,7 @@ using System.Text;
 
 namespace I4SWT_Group21_Ladeskab
 {
-	public class Door : IDoor
+	class Door
 	{
-
-
-       public void lockDoor()
-        {
-
-        }
-
-
-       public void unlockDoor()
-        {
-
-        }
-    }
+	}
 }
