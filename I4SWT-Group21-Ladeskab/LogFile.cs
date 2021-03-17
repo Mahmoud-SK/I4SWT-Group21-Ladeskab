@@ -16,13 +16,13 @@ namespace I4SWT_Group21_Ladeskab
 		}
 		public void LogDoorLocked(int id)
 		{
-			sb_.Append("Door has been locked with ID: " + id);
+			sb_.Append("Date: " + DateTime.Now + " - Door has been locked with ID: " + id);
 			File.AppendAllText(Environment.CurrentDirectory + filename, sb_.ToString());
 		}
 
 		public void LogDoorUnlocked(int id)
 		{
-			sb_.Append("Door has been unlocked with ID: " + id);
+			sb_.Append("Date: " + DateTime.Now + " - Door has been unlocked with ID: " + id);
 			File.AppendAllText(Environment.CurrentDirectory + filename, sb_.ToString());
 		}
 	}
