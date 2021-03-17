@@ -6,7 +6,7 @@ namespace Ladeskab
 {
 	public class RfidReader : IRfidReader
 	{
-		public event EventHandler<CurrentEventArgs> RfidDetectedEvent;
+		public event EventHandler<RfidEventArgs> RfidDetectedEvent;
 
 		public int RfidDetected { get; }
 	}

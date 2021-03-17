@@ -7,7 +7,7 @@ namespace Ladeskab
 {
     public class Display : IDisplay
     {
-        public void show(string message)
+        public void Show(string message)
         {
             Console.WriteLine(message);
         }

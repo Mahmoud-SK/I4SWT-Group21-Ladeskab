@@ -6,6 +6,6 @@ namespace Ladeskab.Interfaces
 {
 	public interface IDisplay
     {
-        public void show(string message);
+        public void Show(string message);
     }
 }

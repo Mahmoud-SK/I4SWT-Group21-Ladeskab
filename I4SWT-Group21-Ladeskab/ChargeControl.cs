@@ -7,22 +7,29 @@ namespace Ladeskab
 {
 	public class ChargeControl : IChargeControl
     {
-        private bool connected;
-        private IDisplay display;
+        private bool _connected;
+        private IDisplay _display;
+        private IUsbCharger _usbCharger;
 
-        public bool isConnected()
+        public ChargeControl(IDisplay display, IUsbCharger usbCharger)
         {
-            return connected;
+            _display = display;
+            _usbCharger = usbCharger;
         }
 
-        public void startCharge()
+        public bool IsConnected()
         {
-
+            return _connected;
         }
 
-        public void stopCharge()
+        public void StartCharge()
         {
+            _usbCharger.StartCharge();
+        }
 
+        public void StopCharge()
+        {
+            _usbCharger.StopCharge();
         }
 	}
 }
