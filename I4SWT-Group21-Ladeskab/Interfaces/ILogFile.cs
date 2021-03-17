@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace I4SWT_Group21_Ladeskab
+namespace Ladeskab.Interfaces
 {
-	class ILogFile
+	public interface ILogFile
 	{
+		public void LogDoorUnlocked(int id);
+		public void LogDoorLocked(int id);
 	}
 }
