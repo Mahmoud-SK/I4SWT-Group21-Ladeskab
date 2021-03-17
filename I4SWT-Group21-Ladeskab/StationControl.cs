@@ -27,9 +27,6 @@ namespace Ladeskab
         private IDisplay _display;
         private ILogFile _logfile;
 
-        private string logFile = "logfile.txt"; // Navnet på systemets log-fil
-
-
         //private string logFile = "logfile.txt"; // Navnet på systemets log-fil - Udkommenteret for nu, det her laves i LogFile istedet for.
 
         public StationControl(IChargeControl charger, IDoor door, IRfidReader rfid, IDisplay display, ILogFile logfile)
@@ -39,7 +36,6 @@ namespace Ladeskab
             _rfid = rfid;
             _display = display;
             _logfile = logfile;
-
 
 		}
 
