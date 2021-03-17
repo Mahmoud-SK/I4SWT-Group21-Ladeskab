@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Ladeskab.Interfaces;
 
-namespace I4SWT_Group21_Ladeskab
+namespace Ladeskab
 {
-	class Display
-	{
-	}
+    public class Display : IDisplay
+    {
+        public void show(string message)
+        {
+            Console.WriteLine(message);
+        }
+    }
 }

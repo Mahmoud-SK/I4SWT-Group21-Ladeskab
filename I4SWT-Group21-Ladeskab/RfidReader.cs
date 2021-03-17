@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace I4SWT_Group21_Ladeskab
+namespace Ladeskab
 {
-	class RfidReader
+	public class RfidReader : IRfidReader
 	{
+		public event EventHandler<CurrentEventArgs> RfidDetectedEvent;
+
+		public int RfidDetected { get; }
 	}
 }
