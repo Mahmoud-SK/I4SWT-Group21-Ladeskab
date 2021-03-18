@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ladeskab.Interfaces
 {
-	public class RfidReaderEventArgs : EventArgs
+	public class RfidEventArgs : EventArgs
 	{
 	}		
 	
