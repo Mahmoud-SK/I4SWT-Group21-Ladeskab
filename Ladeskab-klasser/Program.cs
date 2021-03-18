@@ -1,4 +1,7 @@
-﻿    class Program
+﻿using Ladeskab;
+using System;
+
+class Program
     {
         static void Main(string[] args)
         {
@@ -31,7 +34,7 @@
                         string idString = System.Console.ReadLine();
 
                         int id = Convert.ToInt32(idString);
-                        rfidReader.OnRfidRead(id);
+                        RfidReader.OnRfidRead(id);
                         break;
 
                     default:
