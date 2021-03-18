@@ -6,6 +6,7 @@ namespace Ladeskab.Interfaces
 {
 	public class RfidEventArgs : EventArgs
 	{
+		public int Id { get; set; }
 	}		
 	
 	public interface IRfidReader
