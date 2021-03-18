@@ -15,6 +15,6 @@ namespace Ladeskab.Interfaces
 		event EventHandler<RfidEventArgs> RfidDetectedEvent;
 
 		//Reading Rfid
-		void onRfidRead(int id);
+		void OnRfidRead(int id);
 	}
 }

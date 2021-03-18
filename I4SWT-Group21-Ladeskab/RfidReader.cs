@@ -8,7 +8,7 @@ namespace Ladeskab
 	public class RfidReader : IRfidReader
 	{
 		public event EventHandler<RfidEventArgs> RfidDetectedEvent;
-		public void onRfidRead(int id)
+		public void OnRfidRead(int id)
 		{
 			RfidDetectedEvent?.Invoke(new RfidEventArgs() {Id = id});
 		}
