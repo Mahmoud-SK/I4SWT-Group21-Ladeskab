@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "I4SWT-Group21-Ladeskab-klasser", "I4SWT-Group21-Ladeskab\I4SWT-Group21-Ladeskab-klasser.csproj", "{E5807CC5-0D42-4E29-90F0-A795AF8ADC62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ladeskab.Unit.Test", "Ladeskab.Unit.Test\Ladeskab.Unit.Test.csproj", "{38243444-20F9-451C-B8D1-24099CDBA75D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ladeskab.Application", "Ladeskab-klasser\Ladeskab.Application.csproj", "{6B90409D-0BA9-4FD2-8002-FBDE81581E5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ladeskab.App", "Ladeskab.App\Ladeskab.App.csproj", "{6D239C12-319F-41D5-A326-821ED6457097}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ladeskab.Unit.Test", "Ladeskab.Unit.Test\Ladeskab.Unit.Test.csproj", "{38243444-20F9-451C-B8D1-24099CDBA75D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ladeskab.Class.Library", "Ladeskab.Class.Library\Ladeskab.Class.Library.csproj", "{A9525496-60AD-4BE8-87FE-9E8D544922E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E5807CC5-0D42-4E29-90F0-A795AF8ADC62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E5807CC5-0D42-4E29-90F0-A795AF8ADC62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E5807CC5-0D42-4E29-90F0-A795AF8ADC62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E5807CC5-0D42-4E29-90F0-A795AF8ADC62}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6B90409D-0BA9-4FD2-8002-FBDE81581E5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6B90409D-0BA9-4FD2-8002-FBDE81581E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6B90409D-0BA9-4FD2-8002-FBDE81581E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6B90409D-0BA9-4FD2-8002-FBDE81581E5E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{38243444-20F9-451C-B8D1-24099CDBA75D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{38243444-20F9-451C-B8D1-24099CDBA75D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38243444-20F9-451C-B8D1-24099CDBA75D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38243444-20F9-451C-B8D1-24099CDBA75D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D239C12-319F-41D5-A326-821ED6457097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D239C12-319F-41D5-A326-821ED6457097}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D239C12-319F-41D5-A326-821ED6457097}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D239C12-319F-41D5-A326-821ED6457097}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9525496-60AD-4BE8-87FE-9E8D544922E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9525496-60AD-4BE8-87FE-9E8D544922E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9525496-60AD-4BE8-87FE-9E8D544922E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9525496-60AD-4BE8-87FE-9E8D544922E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
