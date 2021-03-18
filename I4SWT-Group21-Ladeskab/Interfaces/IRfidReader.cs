@@ -12,8 +12,8 @@ namespace Ladeskab.Interfaces
 	{
 		// Eventhandler
 		event EventHandler<RfidEventArgs> RfidDetectedEvent;
-		
-		// Property for detecting Rfid tag
-		int RfidDetected { get; }
+
+		//Reading Rfid
+		void onRfidRead(int id);
 	}
 }
