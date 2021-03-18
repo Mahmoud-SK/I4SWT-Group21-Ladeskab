@@ -14,7 +14,7 @@ namespace Ladeskab
         {
             _display = display;
             _usbCharger = usbCharger;
-            usbCharger.CurrentValueEvent += newCurrent;
+            usbCharger.CurrentValueEvent += NewCurrent;
         }
 
         public bool Connected()
@@ -32,7 +32,7 @@ namespace Ladeskab
             _usbCharger.StopCharge();
         }
 
-        public void newCurrent(object sender, CurrentEventArgs e)
+        public void NewCurrent(object sender, CurrentEventArgs e)
         {
             if (e.Current > 0 && e.Current <= 5)
                 _display.Show("Telefonen er fuldt opladet");
