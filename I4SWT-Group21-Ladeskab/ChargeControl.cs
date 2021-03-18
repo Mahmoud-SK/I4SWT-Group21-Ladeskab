@@ -7,7 +7,6 @@ namespace Ladeskab
 {
 	public class ChargeControl : IChargeControl
     {
-        private bool _connected;
         private IDisplay _display;
         private IUsbCharger _usbCharger;
 
@@ -15,11 +14,12 @@ namespace Ladeskab
         {
             _display = display;
             _usbCharger = usbCharger;
+            usbCharger.CurrentValueEvent += NewCurrent;
         }
 
-        public bool IsConnected()
+        public bool Connected()
         {
-            return _connected;
+            return _usbCharger.Connected;
         }
 
         public void StartCharge()
@@ -31,5 +31,19 @@ namespace Ladeskab
         {
             _usbCharger.StopCharge();
         }
+
+        public void NewCurrent(object sender, CurrentEventArgs e)
+        {
+            if (e.Current > 0 && e.Current <= 5)
+                _display.Show("Telefonen er fuldt opladet");
+            else if (e.Current > 5 && e.Current <= 500)
+                _display.Show("Opladning er igang");
+            else if (e.Current > 500)
+            {
+                _usbCharger.StopCharge();
+                _display.Show("Fejl i opladning");
+            }
+        }
+
 	}
 }
