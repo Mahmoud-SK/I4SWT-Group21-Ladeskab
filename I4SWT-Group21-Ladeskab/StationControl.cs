@@ -95,7 +95,7 @@ namespace Ladeskab
 			switch (_state)
 			{
 				case LadeskabState.Available:
-					if (e.DoorState == true)
+					if (e.DoorOpen == true)
 					{
 						_state = LadeskabState.DoorOpen;
 						_display.Show("Tilslut Telefon");
@@ -103,7 +103,7 @@ namespace Ladeskab
 					break;
 
 				case LadeskabState.DoorOpen:
-					if (e.DoorState == false)
+					if (e.DoorOpen == false)
 					{
 						_state = LadeskabState.Available;
 						_display.Show("Indlæs RFID");
@@ -121,3 +121,5 @@ namespace Ladeskab
 		}
 	}
 }
+
+
