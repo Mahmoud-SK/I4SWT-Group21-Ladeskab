@@ -16,14 +16,14 @@ namespace Ladeskab
 		}
 		public void LogDoorLocked(int id)
 		{
-			sb_.AppendLine("Date: " + DateTime.Now + " - Door has been locked with ID: " + id);
+			sb_.AppendLine("Date: " + DateTime.Now + " - Døren er blevet lukket med ID: " + id);
 			File.AppendAllText(Environment.CurrentDirectory + filename, sb_.ToString());
 			sb_.Clear();
 		}
 
 		public void LogDoorUnlocked(int id)
 		{
-			sb_.AppendLine("Date: " + DateTime.Now + " - Door has been unlocked with ID: " + id);
+			sb_.AppendLine("Date: " + DateTime.Now + " - Døren er låst op med ID: " + id);
 			File.AppendAllText(Environment.CurrentDirectory + filename, sb_.ToString());
 			sb_.Clear();
 		}
