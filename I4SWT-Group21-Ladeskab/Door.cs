@@ -7,23 +7,31 @@ namespace Ladeskab
 {
     public class Door : IDoor
     {
-        private bool DoorState;
+        private bool DoorLock;
+
 
         public event EventHandler<DoorStateEventArgs> DoorStateEvent;
-
-        public bool CurrentDoorState { get; private set; }
 
 
         public void LockDoor()
         {
-            if (CurrentDoorState)
-                DoorState = true;
+            DoorLock = true;
         }
 
         public void UnlockDoor()
         {
-            if (!CurrentDoorState)
-                DoorState = false;
+            DoorLock = false;
         }
+
+        public void OnDoorOpen()
+        {
+            DoorStateEvent?.Invoke(this, new DoorStateEventArgs() { DoorOpen = true });
+        }
+
+        public void OnDoorClose()
+        {
+            DoorStateEvent?.Invoke(this, new DoorStateEventArgs() { DoorOpen = false });
+        }
+
     }
 }
