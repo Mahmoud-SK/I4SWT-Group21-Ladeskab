@@ -8,18 +8,22 @@ namespace Ladeskab
     public class Door : IDoor
     {
         private bool DoorState;
-        public bool CurrentDoorState { get; }
 
         public event EventHandler<DoorStateEventArgs> DoorStateEvent;
 
+        public bool CurrentDoorState { get; private set; }
+
+
         public void LockDoor()
         {
-            DoorState = true;
+            if (CurrentDoorState)
+                DoorState = true;
         }
 
         public void UnlockDoor()
         {
-            DoorState = false;
+            if (!CurrentDoorState)
+                DoorState = false;
         }
     }
 }
