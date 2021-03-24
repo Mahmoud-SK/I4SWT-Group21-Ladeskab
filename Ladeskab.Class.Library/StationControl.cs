@@ -36,6 +36,7 @@ namespace Ladeskab
 			_rfid = rfid;
 			_display = display;
 			_logfile = logfile;
+            _state = LadeskabState.Available;
 
 			_rfid.RfidDetectedEvent += RfidDetected;
 			_door.DoorStateEvent += DoorEventHandler;
