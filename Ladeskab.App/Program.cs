@@ -12,7 +12,9 @@ namespace Ladeskab.App
 
             ConsoleWriter writer = new ConsoleWriter();
             Display display = new Display(writer);
-            LogFile logfile = new LogFile();
+            TimeProvider time = new TimeProvider();
+            FileWriter file = new FileWriter();
+            LogFile logfile = new LogFile(file,time);
             RfidReader rfid = new RfidReader();
             Door door = new Door();
             UsbChargerSimulator usbCharger = new UsbChargerSimulator();

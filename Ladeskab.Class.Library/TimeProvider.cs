@@ -9,7 +9,7 @@ namespace Ladeskab
 	{
 		public DateTime ProvideDate()
 		{
-			throw new NotImplementedException();
+			return DateTime.Now;
 		}
 	}
 }
