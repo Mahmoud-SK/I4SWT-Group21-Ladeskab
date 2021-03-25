@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Ladeskab;
+using Ladeskab.Interfaces;
 using NUnit.Framework;
 
 namespace Ladeskab.Unit.Test
@@ -10,11 +11,18 @@ namespace Ladeskab.Unit.Test
     class TestDoor
     {
         private Door _uut;
+        private DoorStateEventArgs _DoorStateEventArgs;
+
 
         [SetUp]
         public void SetUp()
         {
             _uut = new Door();
+            _DoorStateEventArgs = new DoorStateEventArgs();
+            _uut.DoorStateEvent += (o,args) =>
+            {
+                _DoorStateEventArgs = args;
+            };
         }
 
 
@@ -41,5 +49,20 @@ namespace Ladeskab.Unit.Test
             Assert.That(_uut.DoorLock, Is.EqualTo(false));
         }
 
+
+        [Test]
+        public void OnDoorOpen_Event()
+        {
+            _uut.OnDoorOpen();
+            Assert.That(_DoorStateEventArgs.DoorOpen, Is.EqualTo(true));
+        }
+
+
+        [Test]
+        public void OnDoorClose_Event()
+        {
+            _uut.OnDoorClose();
+            Assert.That(_DoorStateEventArgs.DoorOpen, Is.EqualTo(false));
+        }
     }
 }
