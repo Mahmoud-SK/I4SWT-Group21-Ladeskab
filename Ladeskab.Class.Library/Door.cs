@@ -12,6 +12,10 @@ namespace Ladeskab
 
         public event EventHandler<DoorStateEventArgs> DoorStateEvent;
 
+        public Door()
+        {
+            DoorLock = false;
+        }
 
         public void LockDoor()
         {
