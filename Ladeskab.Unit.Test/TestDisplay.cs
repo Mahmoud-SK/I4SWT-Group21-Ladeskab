@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Ladeskab;
+using Ladeskab.Interfaces;
+using NSubstitute;
 
 namespace _Display.Test
 {
@@ -10,18 +12,21 @@ namespace _Display.Test
     public class TestDisplay
     {
         private Display _uut;
+        private IConsoleWriter _consoleWriter;
         [SetUp]
         public void Setup()
         {
-            _uut = new Display();
+            _consoleWriter = Substitute.For<IConsoleWriter>();
+            _uut = new Display(_consoleWriter);
         }
 
-        /*[Test]
+        [Test]
         public void ctor_IsConnected()
         {
             _uut.Show("test");
-            Assert.That(_uut.Connected, Is.True);
-        }*/
+            _consoleWriter.Received(1).WriteToConsole("test");
+            //Assert.That(_uut.Connected, Is.True);
+        }
 
     }
 }

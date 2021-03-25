@@ -1,5 +1,6 @@
 ﻿using Ladeskab;
 using System;
+using Ladeskab.Class.Library.Interfaces;
 using Ladeskab.Interfaces;
 
 namespace Ladeskab.App
@@ -9,9 +10,11 @@ namespace Ladeskab.App
         static void Main(string[] args)
         {
 
-
-            Display display = new Display();
-            LogFile logfile = new LogFile();
+            ConsoleWriter writer = new ConsoleWriter();
+            Display display = new Display(writer);
+            TimeProvider time = new TimeProvider();
+            FileWriter file = new FileWriter();
+            LogFile logfile = new LogFile(file,time);
             RfidReader rfid = new RfidReader();
             Door door = new Door();
             UsbChargerSimulator usbCharger = new UsbChargerSimulator();
