@@ -60,19 +60,26 @@ namespace chargeCtrl.Test
         [TestCase(1)]
         [TestCase(3)]
         [TestCase(5)]
-        public void NewCurrent_FullyCharged_ChargeNotStopped(int _current)
+        public void NewCurrent_FullyCharged_DisplayFullyCharged(int _current)
         {
             _usbCharger.CurrentValueEvent += Raise.EventWith(new CurrentEventArgs {Current = _current});
-            _usbCharger.Received(0).StopCharge();
+            _display.Received(1).Show(Arg.Is<string>(x => x.Contains("Telefonen er fuldt opladet")));
         }
 
         [TestCase(6)]
         [TestCase(350)]
         [TestCase(500)]
-        public void NewCurrent_Charging_ChargeNotStopped(int _current)
+        public void NewCurrent_Charging_DisplayCharging(int _current)
         {
             _usbCharger.CurrentValueEvent += Raise.EventWith(new CurrentEventArgs { Current = _current });
-            _usbCharger.Received(0).StopCharge();
+            _display.Received(1).Show(Arg.Is<string>(x => x.Contains("Opladning er igang")));
+        }
+
+        [TestCase(501)]
+        public void NewCurrent_FailurHighCurrent_DisplayError(int _current)
+        {
+            _usbCharger.CurrentValueEvent += Raise.EventWith(new CurrentEventArgs { Current = _current });
+            _display.Received(1).Show(Arg.Is<string>(x => x.Contains("Fejl i opladning")));
         }
 
         [TestCase(501)]
