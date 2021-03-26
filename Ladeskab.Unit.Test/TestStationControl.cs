@@ -78,8 +78,7 @@ namespace Ladeskab.Unit.Test
 
             _fRfidReader.RfidDetectedEvent += Raise.EventWith(new RfidEventArgs { Id = 17 });
 
-            //_fDoor.Received(0).LockDoor();
-            _fDisplay.Received(1).Show("Din telefon er ikke ordentlig tilsluttet. Prøv igen.");
+            _fDisplay.Received(1).Show(Arg.Is<string>(x => x.Contains("Din telefon er ikke ordentlig tilsluttet. Prøv igen.")));
         }
 
 
