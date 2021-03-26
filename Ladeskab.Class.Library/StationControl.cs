@@ -58,12 +58,12 @@ namespace Ladeskab
 						_logfile.LogDoorLocked(e.Id);
 
 						
-						_display.Show("Skabet er låst og din telefon lades. Brug dit RFID tag til at låse op.");
+						_display.ShowInstruction("Skabet er låst og din telefon lades. Brug dit RFID tag til at låse op.");
 						_state = LadeskabState.Locked;
 					}
 					else
 					{
-						_display.Show("Din telefon er ikke ordentlig tilsluttet. Prøv igen."); 
+						_display.ShowInstruction("Din telefon er ikke ordentlig tilsluttet. Prøv igen."); 
 					}
 
 					break;
@@ -80,12 +80,12 @@ namespace Ladeskab
 						_door.UnlockDoor();
 						_logfile.LogDoorUnlocked(e.Id);
 
-						_display.Show("Tag din telefon ud af skabet og luk døren");
+						_display.ShowInstruction("Tag din telefon ud af skabet og luk døren");
 						_state = LadeskabState.Available;
 					}
 					else
 					{
-						_display.Show("Forkert RFID tag");
+						_display.ShowInstruction("Forkert RFID tag");
 					}
 
 					break;
@@ -100,7 +100,7 @@ namespace Ladeskab
 					if (e.DoorOpen == true)
 					{
 						_state = LadeskabState.DoorOpen;
-						_display.Show("Tilslut Telefon");
+						_display.ShowInstruction("Tilslut Telefon");
 					}
 					break;
 
@@ -108,11 +108,11 @@ namespace Ladeskab
 					if (e.DoorOpen == false)
 					{
 						_state = LadeskabState.Available;
-						_display.Show("Indlæs RFID");
+						_display.ShowInstruction("Indlæs RFID");
 					}
 					else
 					{
-						_display.Show("Luk døren");
+						_display.ShowInstruction("Luk døren");
 					}
 					break;
 
