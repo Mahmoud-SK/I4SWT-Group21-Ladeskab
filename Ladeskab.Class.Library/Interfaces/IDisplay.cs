@@ -6,6 +6,7 @@ namespace Ladeskab.Interfaces
 {
 	public interface IDisplay
     {
-        public void Show(string message);
+        public void ShowInstruction(string instruction);
+        public void ShowStatus(string status);
     }
 }

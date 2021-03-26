@@ -34,14 +34,16 @@ namespace Ladeskab
 
         public void NewCurrent(object sender, CurrentEventArgs e)
         {
-            if (e.Current > 0 && e.Current <= 5)
-                _display.Show("Telefonen er fuldt opladet");
+            if (e.Current == 0)
+                _display.ShowStatus("");
+            else if (e.Current > 0 && e.Current <= 5)
+                _display.ShowStatus("Telefonen er fuldt opladet");
             else if (e.Current > 5 && e.Current <= 500)
-                _display.Show("Opladning er igang");
+                _display.ShowStatus("Opladning er igang");
             else if (e.Current > 500)
             {
                 _usbCharger.StopCharge();
-                _display.Show("Fejl i opladning");
+                _display.ShowStatus("Fejl i opladning");
             }
         }
 
