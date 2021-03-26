@@ -21,12 +21,33 @@ namespace display.Test
         }
 
         [Test]
-        public void ctor_IsConnected()
+        public void ShowInstruction_ShowNewInstruction()
         {
-            /*_uut.Show("test");
-            _consoleWriter.Received(1).WriteToConsole("test");
-            //Assert.That(_uut.Connected, Is.True);*/
+            _uut.ShowInstruction("newInstruction");
+            _consoleWriter.Received(1).WriteToConsole("newInstruction");
         }
 
+        [Test]
+        public void ShowStatus_ShowNewStatus()
+        {
+            _uut.ShowStatus("newStatus");
+            _consoleWriter.Received(1).WriteToConsole("newStatus");
+        }
+
+        [Test]
+        public void ShowStatusAndShowInstruction_ShowNewInstructionAndStatus_ShowInstructionIsNotEffektedByShowStatus()
+        {
+            _uut.ShowInstruction("newInstruction");
+            _uut.ShowStatus("newStatus");
+            _consoleWriter.Received(2).WriteToConsole("newInstruction");
+        }
+
+        [Test]
+        public void ShowStatusAndShowInstruction_ShowNewInstructionAndStatus_ShowStatusIsNotEffektedByShowInstruction()
+        {
+            _uut.ShowStatus("newStatus");
+            _uut.ShowInstruction("newInstruction");
+            _consoleWriter.Received(2).WriteToConsole("newStatus");
+        }
     }
 }
