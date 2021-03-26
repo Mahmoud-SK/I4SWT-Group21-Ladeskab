@@ -36,6 +36,7 @@ namespace Ladeskab.Unit.Test
         [Test]
         public void LockDoor_DoorLockIsTrue()
         {
+            _uut.UnlockDoor();
             _uut.LockDoor();
             Assert.That(_uut.DoorLock, Is.EqualTo(true));
         }
@@ -53,14 +54,33 @@ namespace Ladeskab.Unit.Test
         [Test]
         public void OnDoorOpen_EventIsTrue()
         {
+            _uut.OnDoorClose();
             _uut.OnDoorOpen();
             Assert.That(_DoorStateEventArgs.DoorOpen, Is.EqualTo(true));
         }
 
 
+
+        [Test]
+        public void OnDoorOpen_EventIsFalse()
+        {
+            _uut.OnDoorOpen();
+            _uut.OnDoorClose();
+            Assert.That(_DoorStateEventArgs.DoorOpen, Is.EqualTo(false));
+        }
+
+        [Test]
+        public void OnDoorClose_EventIsTrue()
+        {
+            _uut.OnDoorClose();
+            _uut.OnDoorOpen();
+            Assert.That(_DoorStateEventArgs.DoorOpen, Is.EqualTo(true));
+        }
+
         [Test]
         public void OnDoorClose_EventIsFalse()
         {
+            _uut.OnDoorOpen();
             _uut.OnDoorClose();
             Assert.That(_DoorStateEventArgs.DoorOpen, Is.EqualTo(false));
         }
