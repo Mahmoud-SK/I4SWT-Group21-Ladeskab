@@ -1,7 +1,5 @@
 ﻿using Ladeskab;
 using System;
-using Ladeskab.Class.Library.Interfaces;
-using Ladeskab.Interfaces;
 
 namespace Ladeskab.App
 {
