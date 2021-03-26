@@ -54,7 +54,7 @@ namespace chargeCtrl.Test
         public void NewCurrent_ZeroCurrent_NothingDisplayed(int _current)
         {
             _usbCharger.CurrentValueEvent += Raise.EventWith(new CurrentEventArgs { Current = _current });
-            _display.Received(0).Show(Arg.Any<string>());
+            _display.Received(1).ShowStatus(Arg.Is<string>(x => x.Contains("")));
         }
 
         [TestCase(1)]
@@ -63,7 +63,7 @@ namespace chargeCtrl.Test
         public void NewCurrent_FullyCharged_DisplayFullyCharged(int _current)
         {
             _usbCharger.CurrentValueEvent += Raise.EventWith(new CurrentEventArgs {Current = _current});
-            _display.Received(1).Show(Arg.Is<string>(x => x.Contains("Telefonen er fuldt opladet")));
+            _display.Received(1).ShowStatus(Arg.Is<string>(x => x.Contains("Telefonen er fuldt opladet")));
         }
 
         [TestCase(6)]
@@ -72,14 +72,14 @@ namespace chargeCtrl.Test
         public void NewCurrent_Charging_DisplayCharging(int _current)
         {
             _usbCharger.CurrentValueEvent += Raise.EventWith(new CurrentEventArgs { Current = _current });
-            _display.Received(1).Show(Arg.Is<string>(x => x.Contains("Opladning er igang")));
+            _display.Received(1).ShowStatus(Arg.Is<string>(x => x.Contains("Opladning er igang")));
         }
 
         [TestCase(501)]
         public void NewCurrent_FailurHighCurrent_DisplayError(int _current)
         {
             _usbCharger.CurrentValueEvent += Raise.EventWith(new CurrentEventArgs { Current = _current });
-            _display.Received(1).Show(Arg.Is<string>(x => x.Contains("Fejl i opladning")));
+            _display.Received(1).ShowStatus(Arg.Is<string>(x => x.Contains("Fejl i opladning")));
         }
 
         [TestCase(501)]

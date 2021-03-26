@@ -68,7 +68,7 @@ namespace Ladeskab.Unit.Test
 
             _fRfidReader.RfidDetectedEvent += Raise.EventWith(new RfidEventArgs { Id = 17 });
 
-            _fDisplay.Received(1).Show("Skabet er låst og din telefon lades. Brug dit RFID tag til at låse op.");
+            _fDisplay.Received(1).ShowInstruction("Skabet er låst og din telefon lades. Brug dit RFID tag til at låse op.");
         }
 
         [Test]
@@ -78,7 +78,7 @@ namespace Ladeskab.Unit.Test
 
             _fRfidReader.RfidDetectedEvent += Raise.EventWith(new RfidEventArgs { Id = 17 });
 
-            _fDisplay.Received(1).Show(Arg.Is<string>(x => x.Contains("Din telefon er ikke ordentlig tilsluttet. Prøv igen.")));
+            _fDisplay.Received(1).ShowInstruction(Arg.Is<string>(x => x.Contains("Din telefon er ikke ordentlig tilsluttet. Prøv igen.")));
         }
 
 
