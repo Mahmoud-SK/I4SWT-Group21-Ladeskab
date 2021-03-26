@@ -6,7 +6,7 @@ using Ladeskab;
 using Ladeskab.Interfaces;
 using NSubstitute;
 
-namespace _Display.Test
+namespace display.Test
 {
     [TestFixture]
     public class TestDisplay

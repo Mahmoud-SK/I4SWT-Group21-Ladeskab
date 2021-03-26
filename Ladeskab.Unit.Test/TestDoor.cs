@@ -5,7 +5,7 @@ using Ladeskab;
 using Ladeskab.Interfaces;
 using NUnit.Framework;
 
-namespace Ladeskab.Unit.Test
+namespace door.Test
 {
     [TestFixture]
     class TestDoor
